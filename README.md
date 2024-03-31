@@ -10,12 +10,16 @@ r109,4,"","function generateRandomUSZipCode() {
     { min: 35000, max: 39999 }, // Alabama
     { min: 40000, max: 49999 }, // Kentucky
   ];
+
   const randomRange = zipCodeRanges[Math.floor(Math.random() * zipCodeRanges.length)];
+
   const randomZipCode = Math.floor(Math.random() * (randomRange.max - randomRange.min + 1)) + randomRange.min;
 
-  return randomZipCode.toString().padStart(5, '0'); 
+  return randomZipCode.toString().padStart(5, '0');
 }
+
 let inputBox = document.getElementById('fldID_zip');
+
 inputBox.value = generateRandomUSZipCode();
 ","adultfriendfinder.com/",1,
 r111,1,"^password$","AY666888","adultfriendfinder.com/",1,
@@ -24,10 +28,8 @@ r114,2,"^REG_sex$","""2""","adultfriendfinder.com/",1,
 r115,2,"^bday_month$","""6""","adultfriendfinder.com/",1,
 r116,2,"^bday_day$","""04""","adultfriendfinder.com/",1,
 r117,2,"^bday_year$","""1988""","adultfriendfinder.com/",1,
-r118,4,"","// 查找目标元素
-const targetElement = document.querySelector(""#fldID_butAction_1"");
+r118,4,"","const targetElement = document.querySelector(""#fldID_butAction_1"");
 
-// 创建鼠标点击事件
 const clickEvent = new MouseEvent(""click"", {
   view: window,
   bubbles: true,
@@ -36,7 +38,6 @@ const clickEvent = new MouseEvent(""click"", {
   clientY: 0  // 你想要点击的位置的 y 坐标
 });
 
-// 模拟点击目标元素
 targetElement.dispatchEvent(clickEvent);
 ","adultfriendfinder.com/",1,
 r121,4,"","// 定义检测函数
@@ -58,8 +59,7 @@ function checkElement() {
 // 每3秒执行一次检测函数
 const intervalId = setInterval(checkElement, 3000);
 ","",1,
-r122,4,"","// 假设我们有这样一个名字的数组
-const names = ['Abigail',
+r122,4,"","const names = ['Abigail',
 'Agatha',
 'Adelaide',
 'Adelina',
@@ -89,7 +89,6 @@ const names = ['Abigail',
 'Angelica',
 'Aspasia',
 'Aurelian',
-'Avis',
 'Beata',
 'Belle',
 'Babs',
@@ -100,7 +99,6 @@ const names = ['Abigail',
 'Bernadette',
 'Beryl',
 'Betty',
-'Brenda',
 'Bridget',
 'Brittany',
 'Bertha',
@@ -145,12 +143,11 @@ const names = ['Abigail',
 'Daisy',
 'Daphne',
 'Dawn',
+'Deb',
 'Debby',
 'Deborah',
 'Deirdre',
 'Delia',
-'Della',
-'Denise',
 'Diana',
 'Diane',
 'Dolly',
@@ -159,7 +156,6 @@ const names = ['Abigail',
 'Doreen',
 'Doris',
 'Dorothy',
-'Elva',
 'Edith',
 'Edna',
 'Eileen',
@@ -187,7 +183,6 @@ const names = ['Abigail',
 'Faustina',
 'Felicity',
 'Fidelia',
-'Fiona',
 'Flora',
 'Florence',
 'Felicia',
@@ -206,7 +201,6 @@ const names = ['Abigail',
 'Germaine',
 'Gertie',
 'Gertrude',
-'Gill',
 'Gillian',
 'Ginny',
 'Gladys',
@@ -230,13 +224,11 @@ const names = ['Abigail',
 'Helga',
 'Hortensia',
 'Isabella',
-'Ingrid',
 'Irene',
 'Iris',
 'Isabel',
 'Jemima',
 'Juliana',
-'Janet',
 'Janey',
 'Janice',
 'Jackie',
@@ -248,7 +240,6 @@ const names = ['Abigail',
 'Jess',
 'Jessica',
 'Jessie',
-'Jill',
 'Joanna',
 'Joanne',
 'Jocelyn',
@@ -266,12 +257,9 @@ const names = ['Abigail',
 'Kathleen',
 'Kate',
 'Kathy',
-'Katie',
 'Kimberly',
 'Kirsten',
 'Kitty',
-'Katharine',
-'Leila',
 'Laura',
 'Lauretta',
 'Lesley',
@@ -282,6 +270,7 @@ const names = ['Abigail',
 'Lindsay',
 'Lisa',
 'Livia',
+'Lois',
 'Lori',
 'Lorna',
 'Louisa',
@@ -319,6 +308,8 @@ const names = ['Abigail',
 'Mary',
 'Maud',
 'Maureen',
+'Mavis',
+'Meg',
 'Melanie',
 'Melinda',
 'Melissa',
@@ -334,8 +325,7 @@ const randomName = names[randomIndex];
 document.getElementById('fldID_REG_handle').value = randomName;
 ","",1,
 r125,0,"^title$","If you're interested in me, let's explore fun and creativity together!","adultfriendfinder.com/",1,
-r126,4,"","// 生成随机的十位字母
-function generateRandomLetters(length) {
+r126,4,"","function generateRandomLetters(length) {
   var result = '';
   var characters = 'abcdefghijklmnopqrstuvwxyz';
   var charactersLength = characters.length;
@@ -397,10 +387,9 @@ floatingDiv2.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
 floatingDiv2.style.zIndex = '9999';
 document.body.appendChild(floatingDiv2);
 
-floatingDiv2.textContent = '阿远脚本';
-","",1,
-r128,4,"","// 定义点击函数
-function clickElementByXPath(xpath) {
+floatingDiv2.textContent = '阿远制作';
+","adultfriendfinder.com/",1,
+r128,4,"","function clickElementByXPath(xpath) {
     var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     if (element) {
         element.click(); // 模拟点击
@@ -427,8 +416,7 @@ setTimeout(function() {
     loopClick();
 }, 3000); // 延迟3秒开始点击
 ","adultfriendfinder.com/",1,
-r127,4,"","// 获取要点击的按钮元素
-var button = document.getElementById('fldID_butAction_2');
+r127,4,"","var button = document.getElementById('fldID_butAction_2');
 
 // 定义点击函数
 function clickButton() {
@@ -464,7 +452,6 @@ textclips,"[]",,,,,
 variables,"[]",,,,,
 activecat,1,,,,,
 attributesoff,0,,,,,
-autoimport,0,https://github.com/yuana8702/yuana8702/blob/5d803f6993a177133b9e74791a0193e25280af2c/README.md,,,,
 backup,0,30,,,,
 badge,1,,,,,
 closeinfobar,1,1,,,,
