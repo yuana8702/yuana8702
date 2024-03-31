@@ -24,43 +24,42 @@ r114,2,"^REG_sex$","""2""","adultfriendfinder.com/",1,
 r115,2,"^bday_month$","""6""","adultfriendfinder.com/",1,
 r116,2,"^bday_day$","""04""","adultfriendfinder.com/",1,
 r117,2,"^bday_year$","""1988""","adultfriendfinder.com/",1,
-r118,4,"","// 查找目标元素
+r118,4,"","
 const targetElement = document.querySelector(""#fldID_butAction_1"");
 
-// 创建鼠标点击事件
+
 const clickEvent = new MouseEvent(""click"", {
   view: window,
   bubbles: true,
   cancelable: true,
-  clientX: 0, // 你想要点击的位置的 x 坐标
-  clientY: 0  // 你想要点击的位置的 y 坐标
+  clientX: 0, 
+  clientY: 0  
 });
 
-// 模拟点击目标元素
+
 targetElement.dispatchEvent(clickEvent);
 ","adultfriendfinder.com/",1,
-r121,4,"","// 定义检测函数
+r121,4,"","
 function checkElement() {
     const errorText = ""This zip/postal code is not valid."";
     const elementsWithText = document.querySelectorAll(""*"");
     for (const element of elementsWithText) {
         if (element.textContent === errorText) {
-            // 如果存在错误提示文本，则刷新页面
+            
             clearInterval(intervalId);
             location.reload();
             return;
         }
     }
     console.log(""Error text not found. Stopping interval."");
-    clearInterval(intervalId); // 如果错误提示文本不存在，停止定时器
+    clearInterval(intervalId); 
 }
 
-// 每3秒执行一次检测函数
+
 const intervalId = setInterval(checkElement, 3000);
 ","",1,
-r122,4,"","// 假设我们有这样一个名字的数组
+r122,4,"","
 const names = ['Abigail',
-'Ada',
 'Agatha',
 'Adelaide',
 'Adelina',
@@ -68,13 +67,11 @@ const names = ['Abigail',
 'Aggie',
 'Agnes',
 'Aileen',
-'Alex',
 'Alexandra',
 'Alexis',
 'Alice',
 'Alison',
 'Amanda',
-'Amy',
 'Angela',
 'Angie',
 'Anita',
@@ -92,7 +89,6 @@ const names = ['Abigail',
 'Angelica',
 'Aspasia',
 'Aurelian',
-'Ava',
 'Avis',
 'Beata',
 'Belle',
@@ -150,14 +146,12 @@ const names = ['Abigail',
 'Daisy',
 'Daphne',
 'Dawn',
-'Deb',
 'Debby',
 'Deborah',
 'Deirdre',
 'Delia',
 'Della',
 'Denise',
-'Di',
 'Diana',
 'Diane',
 'Dolly',
@@ -166,7 +160,6 @@ const names = ['Abigail',
 'Doreen',
 'Doris',
 'Dorothy',
-'Dot',
 'Elva',
 'Edith',
 'Edna',
@@ -187,19 +180,15 @@ const names = ['Abigail',
 'Erica',
 'Ethel',
 'Eunice',
-'Eva',
-'Eve',
 'Evelyn',
 'Eugenia',
 'Eulalia',
 'Evadne',
 'Evangeline',
 'Faustina',
-'Fay',
 'Felicity',
 'Fidelia',
 'Fiona',
-'Flo',
 'Flora',
 'Florence',
 'Felicia',
@@ -242,8 +231,6 @@ const names = ['Abigail',
 'Helga',
 'Hortensia',
 'Isabella',
-'Ivy',
-'Ida',
 'Ingrid',
 'Irene',
 'Iris',
@@ -265,7 +252,6 @@ const names = ['Abigail',
 'Jessica',
 'Jessie',
 'Jill',
-'Jo',
 'Joan',
 'Joanna',
 'Joanne',
@@ -285,14 +271,11 @@ const names = ['Abigail',
 'Kate',
 'Kathy',
 'Katie',
-'Kay',
 'Kelly',
-'Kim',
 'Kimberly',
 'Kirsten',
 'Kitty',
 'Katharine',
-'Kit',
 'Leila',
 'Laura',
 'Lauretta',
@@ -304,7 +287,6 @@ const names = ['Abigail',
 'Lindsay',
 'Lisa',
 'Livia',
-'Liz',
 'Lois',
 'Lori',
 'Lorna',
@@ -344,23 +326,19 @@ const names = ['Abigail',
 'Maud',
 'Maureen',
 'Mavis',
-'Meg',
 'Melanie',
 'Melinda',
 'Melissa',
 'Michelle',];
 
-// 选择一个随机索引
 const randomIndex = Math.floor(Math.random() * names.length);
 
-// 使用随机索引从数组中选择一个名字
 const randomName = names[randomIndex];
 
-// 将随机选择的英文名字设置为指定输入框的值
 document.getElementById('fldID_REG_handle').value = randomName;
 ","",1,
 r125,0,"^title$","If you're interested in me, let's explore fun and creativity together!","adultfriendfinder.com/",1,
-r126,4,"","// 生成随机的十位字母
+r126,4,"","
 function generateRandomLetters(length) {
   var result = '';
   var characters = 'abcdefghijklmnopqrstuvwxyz';
@@ -371,20 +349,20 @@ function generateRandomLetters(length) {
   return result;
 }
 
-// 获取文本输入框元素
+
 var emailInput = document.getElementById(""fldID_email"");
 
-// 获取或初始化记忆的邮箱地址
+
 var rememberedEmail = localStorage.getItem('randomEmail');
 if (!rememberedEmail) {
     rememberedEmail = generateRandomLetters(10) + '@snapmail.cc';
     localStorage.setItem('randomEmail', rememberedEmail);
 }
 
-// 将记忆的邮箱地址填入文本输入框
+
 emailInput.value = rememberedEmail;
 
-// 创建悬浮元素1：用于显示随机邮箱地址
+
 var floatingDiv1 = document.createElement('div');
 floatingDiv1.style.position = 'fixed';
 floatingDiv1.style.top = '50%';
@@ -397,18 +375,18 @@ floatingDiv1.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
 floatingDiv1.style.zIndex = '9999';
 document.body.appendChild(floatingDiv1);
 
-// 显示随机邮箱地址
+
 floatingDiv1.textContent = rememberedEmail;
 
-// 构建跳转链接
+
 var jumpUrl = ""https://www.snapmail.cc/emailList/"" + rememberedEmail + ""?count=2"";
-// 在新标签页中打开链接
+
 window.open(jumpUrl, '_blank');
 
-// 10秒后自动消失
+
 setTimeout(function() {
   floatingDiv1.style.display = 'none';
-}, 10000);
+}, 15000);
 
 // 创建悬浮元素2：用于显示“阿远制作”
 var floatingDiv2 = document.createElement('div');
@@ -425,63 +403,63 @@ document.body.appendChild(floatingDiv2);
 
 floatingDiv2.textContent = '阿远脚本';
 ","",1,
-r128,4,"","// 定义点击函数
+r128,4,"","
 function clickElementByXPath(xpath) {
     var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     if (element) {
-        element.click(); // 模拟点击
+        element.click(); 
     }
 }
 
-// 计数器，用于记录点击次数
+
 var clickCount = 0;
 
-// 延迟3秒后开始点击
+
 setTimeout(function() {
-    // 定义循环点击函数
+
     function loopClick() {
         clickElementByXPath('/html/body/div[4]/div[1]/div/div[1]/div/div/form/div[3]/div[2]/div[3]/a[1]');
         clickCount++;
 
-        // 如果点击次数未达到5次，继续点击
+
         if (clickCount < 5) {
             setTimeout(loopClick, 3000); // 3秒后再次点击
         }
     }
 
-    // 开始循环点击
+
     loopClick();
-}, 3000); // 延迟3秒开始点击
+}, 3000); 
 ","adultfriendfinder.com/",1,
-r127,4,"","// 获取要点击的按钮元素
+r127,4,"","
 var button = document.getElementById('fldID_butAction_2');
 
-// 定义点击函数
+
 function clickButton() {
-    button.click(); // 模拟点击按钮
+    button.click(); 
 }
 
-// 计数器，用于记录点击次数
+
 var clickCount = 0;
 
-// 延迟3秒后开始点击，并设置循环
+
 setTimeout(function() {
-    // 第一次点击
+
     clickButton();
     clickCount++;
 
-    // 设置间隔点击，最多5次
+
     var intervalId = setInterval(function() {
         if (clickCount < 5) {
-            // 如果点击次数未达到5次，继续点击
+
             clickButton();
             clickCount++;
         } else {
-            // 如果点击次数达到5次，停止循环
+
             clearInterval(intervalId);
         }
-    }, 6000); // 3秒点击一次，然后间隔3秒再点击
-}, 3000); // 延迟3秒开始点击
+    }, 6000); 
+}, 3000); 
 ","adultfriendfinder.com/",1,
 ### AUTOFILL OPTIONS ###,,,,,,
 advanced,"[]",,,,,
