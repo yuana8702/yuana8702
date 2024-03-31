@@ -387,7 +387,7 @@ floatingDiv2.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
 floatingDiv2.style.zIndex = '9999';
 document.body.appendChild(floatingDiv2);
 
-floatingDiv2.textContent = '阿远制作';
+floatingDiv2.textContent = '阿远测试';
 ","adultfriendfinder.com/",1,
 r128,4,"","function clickElementByXPath(xpath) {
     var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
